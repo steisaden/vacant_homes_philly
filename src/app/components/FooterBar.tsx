@@ -61,11 +61,12 @@ export function FooterBar() {
                   <div className="font-medium text-foreground mb-1">Last Updated</div>
                   <div>{new Date(dataSource.lastUpdated).toLocaleString()}</div>
                 </div>
-                <div className="pt-2 border-t">
-                  <p className="text-xs">
-                    This application demonstrates how municipal GIS data can be transformed into 
-                    an accessible tool for researchers, housing advocates, and real-estate professionals. 
-                    The current implementation uses mock data for demonstration purposes.
+                <div className="pt-2 border-t text-xs space-y-2">
+                  <p>
+                    This application pulls live municipal GIS data and presents it for researchers, housing advocates, and real-estate professionals. It is not an official City of Philadelphia application; always verify critical information independently.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Please avoid excessive automated scraping; upstream limits may block abusive traffic.
                   </p>
                 </div>
               </DialogDescription>

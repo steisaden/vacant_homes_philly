@@ -151,7 +151,7 @@ export function ResultsPanel({ properties, zipCode, onExportCSV }: ResultsPanelP
 
       {/* Property detail modal */}
       <Dialog open={!!selectedProperty} onOpenChange={(open) => !open && setSelectedProperty(null)}>
-        <DialogContent className="neomorph composite-layer">
+        <DialogContent className="neomorph composite-layer !fixed">
           <DialogHeader>
             <DialogTitle className="flex items-start gap-2">
               <MapPin className="h-5 w-5 mt-0.5 shrink-0" />
@@ -195,11 +195,11 @@ export function ResultsPanel({ properties, zipCode, onExportCSV }: ResultsPanelP
                 </div>
                 <div>
                   <div className="text-muted-foreground mb-1">Latitude</div>
-                  <div className="font-mono text-xs">{selectedProperty.lat.toFixed(4)}</div>
+                  <div className="font-mono text-xs">{selectedProperty.lat?.toFixed(4) ?? 'N/A'}</div>
                 </div>
                 <div>
                   <div className="text-muted-foreground mb-1">Longitude</div>
-                  <div className="font-mono text-xs">{selectedProperty.lon.toFixed(4)}</div>
+                  <div className="font-mono text-xs">{selectedProperty.lon?.toFixed(4) ?? 'N/A'}</div>
                 </div>
               </div>
             </div>

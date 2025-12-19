@@ -71,10 +71,20 @@ export function SearchPanel({ onSearch, isLoading }: SearchPanelProps) {
                   <p>
                     <strong>Available ZIP Codes:</strong> {availableZips.join(', ')}
                   </p>
-                  <p className="text-xs">
-                    Data sourced from City of Philadelphia Open Data via ArcGIS REST API.
-                    This is a demonstration using mock data.
-                  </p>
+                  <div className="text-xs space-y-2">
+                    <p>
+                      Data sourced live from City of Philadelphia Open Data (Vacant Property Indicators - Buildings) via ArcGIS REST API.
+                    </p>
+
+                    <div className="border-t pt-2 mt-2">
+                      <h4 className="font-semibold text-sm mb-1">Usage Policy</h4>
+                      <p className="text-muted-foreground">
+                        This tool is provided &quot;as is&quot; for informational purposes only. It is not an official City of Philadelphia application.
+                        Do not rely on this data for legal or commercial decisions without independent verification.
+                        Excessive automated scraping is prohibited and may result in IP blocking.
+                      </p>
+                    </div>
+                  </div>
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>
@@ -90,12 +100,12 @@ export function SearchPanel({ onSearch, isLoading }: SearchPanelProps) {
             maxLength={5}
             className="max-w-xs neomorph-inset"
           />
-          <Button type="submit" disabled={isLoading || zipCode.length !== 5} className="neomorph hover:neomorph-hover">
+          <Button type="submit" disabled={isLoading || zipCode.length !== 5} className="neomorph hover:neomorph-hover text-foreground font-medium">
             <Search className="h-4 w-4 mr-2" />
             Search
           </Button>
         </form>
       </div>
-    </div>
+    </div >
   );
 }

@@ -11,7 +11,7 @@ export interface VacantProperty {
   lng: number;
 }
 
-// Mock data simulating ArcGIS FeatureServer response
+// Legacy mock data simulating ArcGIS FeatureServer response (retained for offline demos).
 const mockProperties: VacantProperty[] = [
   // ZIP 19140
   { id: '1', address: '1234 N 5th St', zipCode: '19140', opa_account_num: '882-123-4567', vacancy_indicator: 'Likely Vacant', last_inspection: '2024-11-15', owner_name: 'Smith Holdings LLC', property_type: 'Residential', lat: 40.0150, lng: -75.1350 },
@@ -64,6 +64,6 @@ export const getCacheKey = (zipCode: string) => `vacancy_data_${zipCode}`;
 // Simulate data source timestamp
 export const getDataSourceInfo = () => ({
   source: 'City of Philadelphia Open Data (ArcGIS REST API)',
-  lastUpdated: '2024-12-15T08:30:00Z',
-  endpoint: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Vacant_Property_Indicators/FeatureServer/0'
+  lastUpdated: new Date().toISOString(),
+  endpoint: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/Vacant_Indicators_Bldg/FeatureServer/0'
 });
