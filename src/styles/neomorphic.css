@@ -1,0 +1,131 @@
+/* Neumorphic Utility Classes */
+
+.neomorph {
+  background: var(--card);
+  box-shadow: var(--neomorph-shadow-1), var(--neomorph-shadow-2);
+  transition: all 0.3s ease;
+}
+
+.neomorph-inset {
+  background: var(--background);
+  box-shadow: var(--neomorph-inset-1), var(--neomorph-inset-2);
+}
+
+.neomorph-hover:hover {
+  box-shadow: -4px -4px 8px var(--neomorph-light), 4px 4px 8px var(--neomorph-dark);
+  transform: translateY(-2px);
+}
+
+.neomorph-pressed {
+  box-shadow: var(--neomorph-inset-1), var(--neomorph-inset-2);
+  transform: translateY(1px);
+}
+
+/* Composite Art Layers */
+.composite-layer {
+  position: relative;
+}
+
+.composite-layer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(155, 135, 181, 0.03) 0%, rgba(184, 212, 232, 0.05) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.composite-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.composite-accent::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(184, 212, 232, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Decorative Shapes */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.decorative-blob {
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  pointer-events: none;
+  opacity: 0.3;
+  animation: blob-morph 8s ease-in-out infinite;
+}
+
+@keyframes blob-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Floating Animation for Composite Elements */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient Overlays */
+.gradient-overlay-purple {
+  background: linear-gradient(135deg, rgba(201, 184, 217, 0.1) 0%, rgba(155, 135, 181, 0.05) 100%);
+}
+
+.gradient-overlay-blue {
+  background: linear-gradient(135deg, rgba(184, 212, 232, 0.1) 0%, rgba(155, 135, 181, 0.05) 100%);
+}
+
+/* Pastel Badge Variants */
+.badge-pastel-purple {
+  background: var(--pastel-purple);
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(155, 135, 181, 0.2);
+}
+
+.badge-pastel-blue {
+  background: var(--pastel-blue);
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(184, 212, 232, 0.2);
+}
+
+.badge-pastel-green {
+  background: var(--pastel-green);
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(201, 232, 184, 0.2);
+}
+
+.badge-pastel-peach {
+  background: var(--pastel-peach);
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(232, 201, 184, 0.2);
+}
+
+.badge-pastel-pink {
+  background: var(--pastel-pink);
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(232, 184, 212, 0.2);
+}
